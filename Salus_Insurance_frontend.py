@@ -53,6 +53,100 @@ def main():
         pred = model.predict([[p1,p2,p3,p4,p5,p6]])
     
         st.success('Your Insurance Cost is {} THB/year'.format(round(pred[0])))
+
+        st.divider()
+        st.header("Suggestions\n")
+        provide_feedback(p3,p4)
+        if p6 > 0:
+            st.markdown("Hey! We have a Family Package that will reduce your cost. Interested?")
+        st.divider()
+
+        
+
+
+
+def provide_feedback(bmi, smoking_status):
+    if bmi < 18.5:
+        st.text("Your BMI indicates that you are underweight.")
+        if smoking_status == 0:
+            st.markdown("It's important to focus on nourishing your body with a balanced and varied diet.")
+            st.markdown("Include lean proteins, whole grains, fruits, and vegetables in your meals.")
+            st.markdown("Ensure you meet your daily calorie requirements to support healthy weight gain.")
+            st.markdown("Engage in strength-building exercises to build muscle mass and improve your overall strength.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's growth and recovery.")
+            st.markdown("Consider quitting smoking to improve overall health.")
+            st.markdown("Website: https://www.smokefree.gov")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-underweight-adults/")
+        else:
+            st.markdown("It's important to focus on nourishing your body with a balanced and varied diet.")
+            st.markdown("Include lean proteins, whole grains, fruits, and vegetables in your meals.")
+            st.markdown("Ensure you meet your daily calorie requirements to support healthy weight gain.")
+            st.markdown("Engage in strength-building exercises to build muscle mass and improve your overall strength.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's growth and recovery.")
+            st.markdown("For additional information, you can visit:") 
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-underweight-adults/")
+    elif bmi >= 18.5 and bmi < 25:
+        st.text("Your BMI is within the normal range.")
+        if smoking_status == 0:
+            st.markdown("It's important to continue maintaining a balanced diet with a variety of nutritious foods.")
+            st.markdown("Focus on portion control and listen to your body's hunger and fullness cues.")
+            st.markdown("Engage in regular physical activity that you enjoy, aiming for at least 150 minutes per week.")
+            st.markdown("Include a mix of cardiovascular exercises, strength training, and flexibility exercises in your routine.")
+            st.markdown("Make sure to prioritize a consistent sleep schedule, aiming for 7-9 hours of sleep each night.")
+            st.markdown("Consider quitting smoking to further improve your overall health and well-being.")
+            st.markdown("Website: https://www.smokefree.gov")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-a-healthy-weight/")
+        else:
+            st.markdown("It's important to continue maintaining a balanced diet with a variety of nutritious foods.")
+            st.markdown("Focus on portion control and listen to your body's hunger and fullness cues.")
+            st.markdown("Engage in regular physical activity that you enjoy, aiming for at least 150 minutes per week.")
+            st.markdown("Include a mix of cardiovascular exercises, strength training, and flexibility exercises in your routine.")
+            st.markdown("Make sure to prioritize a consistent sleep schedule, aiming for 7-9 hours of sleep each night.")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-a-healthy-weight/")
+    elif bmi >= 25 and bmi < 30:
+        st.text("Your BMI indicates that you are overweight.")
+        if smoking_status == 0:
+            st.markdown("It's important to adopt a healthy eating plan that focuses on whole, unprocessed foods.")
+            st.markdown("Practice portion control and be mindful of your calorie intake.")
+            st.markdown("Engage in regular physical activity for at least 150 minutes per week to support weight management.")
+            st.markdown("Incorporate both cardiovascular exercises and strength training into your routine.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's recovery.")
+            st.markdown("Consider quitting smoking to improve overall health.")
+            st.markdown("Website: https://www.smokefree.gov")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-an-overweight/")
+        else:
+            st.markdown("It's important to adopt a healthy eating plan that focuses on whole, unprocessed foods.")
+            st.markdown("Practice portion control and be mindful of your calorie intake.")
+            st.markdown("Engage in regular physical activity for at least 150 minutes per week to support weight management.")
+            st.markdown("Incorporate both cardiovascular exercises and strength training into your routine.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's recovery.")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-an-overweight/")
+    else:
+        st.text("Your BMI indicates that you are obese.")
+        if smoking_status == 0:
+            st.markdown("It's important to adopt a healthy eating plan that focuses on whole, unprocessed foods.")
+            st.markdown("Practice portion control and be mindful of your calorie intake.")
+            st.markdown("Engage in regular physical activity for at least 150 minutes per week to support weight management.")
+            st.markdown("Incorporate both cardiovascular exercises and strength training into your routine.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's recovery.")
+            st.markdown("Consider quitting smoking to improve overall health.")
+            st.markdown("Website: https://www.smokefree.gov")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-obesity/")
+        else:
+            st.markdown("It's important to adopt a healthy eating plan that focuses on whole, unprocessed foods.")
+            st.markdown("Practice portion control and be mindful of your calorie intake.")
+            st.markdown("Engage in regular physical activity for at least 150 minutes per week to support weight management.")
+            st.markdown("Incorporate both cardiovascular exercises and strength training into your routine.")
+            st.markdown("Prioritize quality sleep of 7-9 hours each night to support your body's recovery.")
+            st.markdown("For additional information, you can visit:")
+            st.markdown("Website: https://www.nhs.uk/live-well/healthy-weight/advice-for-adults-with-obesity/")
+
         
         
 if __name__ == '__main__':
